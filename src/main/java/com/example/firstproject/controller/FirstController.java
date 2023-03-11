@@ -11,4 +11,10 @@ public class FirstController {
         model.addAttribute("username","syLim");
         return "greetings"; // templates/greetings.mustache 찾아서 브라우저로 전송
     }
+
+    @GetMapping("/bye")
+    public String seeYoyLater(Model model){
+        model.addAttribute("nickname","syLim");
+        return "goodbye";
+    }
 }
