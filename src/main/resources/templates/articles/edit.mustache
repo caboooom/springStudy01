@@ -1,0 +1,20 @@
+{{>layouts/header}}
+{{#article}}
+
+    <!--action: 어디로 보낼지 / method: 어떻게 보낼지-->
+    <!--form 태그는 patch method를 지원하지 x. 그래서 일단 post를 사용-->
+<form class="container" action="/articles/update" method="post">
+    <input name="id" type="hidden" value="{{id}}" /> <!--id값도 hidden으로 던져주기-->
+    <div class="mb-3">
+        <label class="form-label">제목</label>
+        <input type="text" class="form-control" name="title" value="{{title}}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">내용</label>
+        <textarea class="form-control" rows="3" name="content">{{content}}</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="/articles/{{id}}">Back</a>
+</form>
+{{/article}}
+{{>layouts/footer}}
